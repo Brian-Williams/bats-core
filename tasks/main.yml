@@ -11,5 +11,5 @@
     chdir: "{{ clone_dir }}"
 
 - name: run tests to confirm install
-  command: /usr/local/bats /opt/bats/test
+  command: "bats {{ clone_dir }}/test/"
 
