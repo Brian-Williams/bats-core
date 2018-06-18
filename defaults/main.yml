@@ -1,0 +1,4 @@
+---
+# defaults file for bats-core
+clone_dir: /tmp/bats-core
+
