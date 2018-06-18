@@ -5,5 +5,5 @@ services:
 
 script:
   - 'sudo docker build --no-cache --rm -t bats-core-env .'
-  - 'sudo docker run -it --rm bats-core ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml'
+  - 'sudo docker run -it --rm bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml'
 
