@@ -1,8 +1,8 @@
 sudo: required
 
 env:
-- ANSIBLE_ARGS="-e @tests/locally_false.json"
-- ANSIBLE_ARGS="-e @tests/locally_true.json"
+- VALUE=false
+- VALUE=true
 
 services:
   - docker
@@ -10,4 +10,4 @@ services:
 script:
   - echo $ANSIBLE_ARG
   - sudo docker build --no-cache -t bats-core-env .
-  - sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml "$ANSIBLE_ARGS"
+  - sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml -e clone_locally=$VALUE

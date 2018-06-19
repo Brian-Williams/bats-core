@@ -1,5 +1,5 @@
 ---
 # defaults file for bats-core
 clone_dir: /tmp/bats-core
-local_clone_dir: "{{ role_path }}/git"
+local_clone_dir: "{{ role_path }}/git/"
 clone_locally: false
