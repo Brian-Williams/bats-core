@@ -1,6 +1,4 @@
 FROM debian:stretch
-# Pass in git as an empty string to create an environment without git
-ARG GIT=git
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
     software-properties-common \
@@ -9,7 +7,8 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libssl-dev \
     python-dev \
     python-pip \
-    systemd $GIT\
+    systemd \
+    git \
  && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --upgrade setuptools && pip install ansible

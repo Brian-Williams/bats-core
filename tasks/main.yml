@@ -1,19 +1,19 @@
 ---
 # tasks file for bats-core
-- name: check if git is installed
-  command: which git
-  ignore_errors: True
-  register: git_check
+#- name: check if git is installed
+#  command: which git
+#  ignore_errors: True
+#  register: git_check
 
 - name: clone bats-core
   git:
     repo: "{{ git_repo }}"
     dest: "{{ clone_dir }}"
-  when: git_check.rc == 0
+  when: (clone_locally == false)
 
 - name: clone bats-core locally and copy to host
   import_tasks: clone-locally.yml
-  when: git_check.rc != 0
+  when: (clone_locally == true)
 
 - name: install bats-core from source
   command: ./install.sh /usr/local
