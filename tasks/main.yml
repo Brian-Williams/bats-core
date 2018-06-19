@@ -2,6 +2,7 @@
 # tasks file for bats-core
 - name: check if git is installed
   command: which git
+  ignore_errors: True
   register: git_check
 
 - name: clone bats-core
