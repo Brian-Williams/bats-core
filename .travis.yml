@@ -8,5 +8,6 @@ services:
   - docker
 
 script:
-  - 'sudo docker build --no-cache --rm -t bats-core-env .'
-  - "sudo docker run -it --rm bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml --extra-vars $ANSIBLE_ARG"
+  - echo $ANSIBLE_ARG
+  - sudo docker build --no-cache --rm -t bats-core-env .
+  - sudo docker run -it --rm bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml --extra-vars $ANSIBLE_ARG
