@@ -1,13 +1,13 @@
 sudo: required
 
 env:
-- ANSIBLE_ARG="clone_locally=true"
-- ANSIBLE_ARG="clone_locally=false"
+- ANSIBLE_ARGS="--extra-vars clone_locally=true"
+- ANSIBLE_ARGS="--extra-vars clone_locally=false"
 
 services:
   - docker
 
 script:
   - echo $ANSIBLE_ARG
-  - sudo docker build --no-cache --rm -t bats-core-env .
-  - sudo docker run -it --rm bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml --extra-vars $ANSIBLE_ARG
+  - sudo docker build --no-cache -t bats-core-env .
+  - sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml "$ANSIBLE_ARGS"
