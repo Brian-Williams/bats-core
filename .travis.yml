@@ -10,4 +10,4 @@ services:
 script:
   - echo $ANSIBLE_ARG
   - sudo docker build --no-cache -t bats-core-env .
-  - "sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml -e '{\"clone_locally\": $VALUE}'"
+  - sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml -e "{\"clone_locally\": $VALUE}"
