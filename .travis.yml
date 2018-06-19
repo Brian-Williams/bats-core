@@ -10,4 +10,4 @@ services:
 script:
   - echo $ANSIBLE_ARG
   - sudo docker build --no-cache -t bats-core-env .
-  - sudo docker run bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml "$ANSIBLE_ARGS"
+  - sudo docker run -it bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml "$ANSIBLE_ARGS"
