@@ -9,3 +9,4 @@
   copy:
     src: "{{ local_clone_dir }}"
     dest: "{{ clone_dir }}"
+    mode: 0755
