@@ -1,0 +1,11 @@
+---
+- name: clone bats-core locally
+  local_action:
+    module: git
+    repo: "{{ git_repo }}"
+    dest: "{{ local_clone_dir }}"
+
+- name: copy bats-core to host
+  copy:
+    src: "{{ local_clone_dir }}"
+    dest: "{{ clone_dir }}"

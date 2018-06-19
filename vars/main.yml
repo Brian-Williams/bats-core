@@ -1,2 +1,3 @@
 ---
 # vars file for bats-core
+git_repo: 'https://github.com/bats-core/bats-core.git'

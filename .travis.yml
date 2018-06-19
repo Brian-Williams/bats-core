@@ -1,9 +1,12 @@
 sudo: required
 
+env:
+- GIT=git
+- GIT=''
+
 services:
   - docker
 
 script:
-  - 'sudo docker build --no-cache --rm -t bats-core-env .'
+  - 'sudo docker build --no-cache --rm --build-arg GIT=$GIT -t bats-core-env .'
   - 'sudo docker run -it --rm bats-core-env ansible-playbook /etc/ansible/roles/bats-core/tests/test.yml'
-
