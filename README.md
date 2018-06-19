@@ -6,10 +6,12 @@ Role to install bats-core from source.
 Requirements
 ------------
 
-#### Optional
-By default it will try to use ansible's git module requirements (as of writing git>=1.7.1).
-If the target doesn't have that, but the ansible controller does you can use clone_locally=true
-to clone to the controller and then copy to the host
+git module requirements (as of writing git>=1.7.1)
+
+#### Run without git requirement on target
+
+If the target doesn't have git requirements, but the ansible controller does you can use clone_locally=true
+to clone to the controller and then copy to the host.
 
 Role Variables
 --------------
